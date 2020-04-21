@@ -1,10 +1,13 @@
 package com.luan.clinicasradar.controller;
 
 
+import com.luan.clinicasradar.domain.Convenio;
 import com.luan.clinicasradar.service.ConvenioService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/convenio")
@@ -17,10 +20,9 @@ public class ConvenioController {
     }
 
     @GetMapping("")
-    public String getAll(){
-        return  null;
+    public Collection<Convenio> getAll(){
+        return  convenioService.buscarTodosConvenios();
     }
-
 
 
 }
