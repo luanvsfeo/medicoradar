@@ -1,0 +1,21 @@
+.map{
+
+    width: 100vw;
+    height: 90vh;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+
+@media only screen and (max-device-width: 930px) {
+
+    .map{
+
+        height: 80vh;
+
+    }
+
+}
