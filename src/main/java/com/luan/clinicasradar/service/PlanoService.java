@@ -1,7 +1,10 @@
 package com.luan.clinicasradar.service;
 
+import com.luan.clinicasradar.domain.Plano;
 import com.luan.clinicasradar.repository.PlanoRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Service
 public class PlanoService {
@@ -13,11 +16,11 @@ public class PlanoService {
         this.planoRepository = planoRepository;
     }
 
-    public String buscarPlanos(){
-        return "puta que pariu";
+    public Collection<Plano> buscarPlanos(){
+        return planoRepository.findAll();
     }
 
-    public String buscarPlanosPorId(int convenioId){
-        return null;
+    public Collection<Plano> buscarPlanosPorId(String convenioId){
+        return this.planoRepository.findPlanosByCdOperadora(convenioId);
     }
 }
