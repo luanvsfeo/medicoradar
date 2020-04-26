@@ -79,3 +79,37 @@ CREATE TABLE planos (
 	data_registro_plano             varchar(300) NULL,
 	CONSTRAINT pk_plano PRIMARY KEY (id_plano)
 );
+
+
+create table estabelecimento(
+	ID_REDE                         varchar(255) not null,
+	CD_OPERADORA                    varchar(255) null,
+	NM_PRAZO                        varchar(255) null,
+	DS_CLASSIFICACAO                varchar(255) null,
+	DE_PORTE                        varchar(255) null,
+	ID_PLANO                        varchar(255) null,
+	CD_PLANO                        varchar(255) null,
+	CONTRATACAO                     varchar(255) null,
+	DE_TIPO_CONTRATACAO             varchar(255) null,
+	DE_TIPO_MODALIDADE_FINM         varchar(255) null,
+	SEGMENTACAO_ASSISTENCIAL        varchar(255) null,
+	DE_TIPO_ABRANGENCIA_GEOGRAFICA  varchar(255) null,
+	LG_FATOR_MODERADOR              varchar(255) null,
+	DE_SITUACAO_PRINCIPAL           varchar(255) null,
+	ID_ESTABELECIMENTO_SAUDE        varchar(255) null,
+	CD_CNPJ_ESTB_SAUDE              varchar(255) null,
+	CD_CNES                         varchar(255) null,
+	NM_ESTABELECIMENTO_SAUDE        varchar(255) null,
+	DE_CLAS_ESTB_SAUDE              varchar(255) null,
+	LG_URGENCIA_EMERGENCIA          varchar(255) null,
+	DE_TIPO_PRESTADOR               varchar(255) null,
+	DE_TIPO_CONTRATO                varchar(255) null,
+	DE_DISPONIBILIDADE              varchar(255) null,
+	CD_MUNICIPIO                    varchar(255) null,
+	NM_MUNICIPIO_X                  varchar(255) null,
+	SG_UF                           varchar(255) null,
+	DT_VINCULO_INICIO               varchar(255) null,
+	DT_VINCULO_FIM                  varchar(255) null,
+	NM_REGIAO                       varchar(255) null,
+	constraint pk_estabelecimento primary key (ID_REDE)
+);
