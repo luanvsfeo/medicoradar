@@ -12,7 +12,7 @@ public class Plano {
     private String idPlano;
     private String cdPlano;
     private String nomePlano;
-    private String registroANS;
+    private String registroAns;
     private String razaoSocial;
     private String nomeFantasia;
     private String codigoModalidade;
@@ -56,12 +56,12 @@ public class Plano {
         this.nomePlano = nomePlano;
     }
 
-    public String getRegistroANS() {
-        return registroANS;
+    public String getRegistroAns() {
+        return registroAns;
     }
 
-    public void setRegistroANS(String registroANS) {
-        this.registroANS = registroANS;
+    public void setRegistroAns(String registroAns) {
+        this.registroAns = registroAns;
     }
 
     public String getRazaoSocial() {
