@@ -12,7 +12,7 @@ public class PlanoService {
    private final  PlanoRepository planoRepository;
 
 
-    public PlanoService(PlanoRepository planoRepository) {
+     PlanoService(PlanoRepository planoRepository) {
         this.planoRepository = planoRepository;
     }
 
