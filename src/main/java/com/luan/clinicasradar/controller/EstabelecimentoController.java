@@ -22,7 +22,7 @@ public class EstabelecimentoController {
 
     @GetMapping(Urls.ESTABELECIMENTOS_POR_PLANO_CONVENIO)
     public Collection<Estabelecimento> getByCdOperadoraECdPlano(@PathVariable("cdOperadora") String cdOperadora,@PathVariable("cdPlano") String cdPlano){
-        return  estabelecimentoService.buscarTodosEstabelecimentos();
+        return  estabelecimentoService.buscarPorCdOperadoraECdPlano(cdOperadora,cdPlano);
     }
 
 
