@@ -19,8 +19,8 @@ public class EstabelecimentoService {
         return estabelecimentoRepository.findAll();
     }
 
-    public Collection<Estabelecimento> buscarPorCdOperadoraECdPlano(){
-        return estabelecimentoRepository.buscarEstabelecimentosPorCdPLanoECdOperadora();
+    public Collection<Estabelecimento> buscarPorCdOperadoraECdPlano(String cdOperadora, String cdPlano){
+        return estabelecimentoRepository.buscarEstabelecimentosPorCdPLanoECdOperadora(cdOperadora,cdPlano);
     }
 
 }
