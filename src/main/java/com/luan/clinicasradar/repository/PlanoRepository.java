@@ -11,6 +11,6 @@ import java.util.Collection;
 @Repository
 public interface PlanoRepository extends JpaRepository<Plano,String> {
 
-    @Query(value = "SELECT * FROM PLANOS p WHERE p.cd_plano  IN (SELECT cd_plano FROM planos_convenios pc WHERE pc.cd_operadora  like :operadora_id )",nativeQuery = true)
+    @Query(value = "SELECT * FROM PLANOS p WHERE p.registro_ans = :operadora_id",nativeQuery = true)
     Collection<Plano> findPlanosByCdOperadora(@Param("operadora_id") String operadora_id);
 }
