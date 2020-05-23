@@ -1,5 +1,6 @@
 package com.luan.clinicasradar.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,35 +10,64 @@ import javax.persistence.Table;
 public class Estabelecimento {
 
     @Id
-    private String idRede                ;
-    private String cdOperadora                ;
+    private String idRede;
+
+    private String cdOperadora;
+
     private String nmPrazo;
-    private String dsClassificacao              ;
-    private String dePorte                      ;
-    private String idPlano                      ;
-    private String cdPlano                      ;
-    private String Contratacao                   ;
-    private String deTipoContratacao           ;
-    private String deTipoModalidadeFinm       ;
-    private String SegmentacaoAssistencial      ;
+
+    private String dsClassificacao;
+
+    private String dePorte;
+
+    private String idPlano;
+
+    private String cdPlano;
+
+    private String Contratacao;
+
+    private String deTipoContratacao;
+
+    private String deTipoModalidadeFinm;
+
+    private String SegmentacaoAssistencial;
+
     private String deTipoAbrangenciaGeografica;
-    private String lgFatorModerador            ;
-    private String deSituacaoPrincipal         ;
-    private String idEstabelecimentosaude      ;
-    private String cdCnpjEstbSaude            ;
-    private String cdCnes                       ;
-    private String nmEstabelecimentoSaude      ;
-    private String deClasEstbSaude            ;
-    private String lgUrgenciaEmergencia        ;
-    private String deTipoPrestador             ;
-    private String deTipoContrato              ;
-    private String deDisponibilidade            ;
-    private String cdMunicipio                 ;
-    private String nmMunicipioX                ;
-    private String sgUF                         ;
-    private String dtVinculoInicio             ;
-    private String dtVinculoFim              ;
-    private String nmRegiao               ;
+
+    private String lgFatorModerador;
+
+    private String deSituacaoPrincipal;
+
+    private String idEstabelecimentoSaude;
+
+    private String cdCnpjEstbSaude;
+
+    private String cdCnes;
+
+    private String nmEstabelecimentoSaude;
+
+    private String deClasEstbSaude;
+
+    private String lgUrgenciaEmergencia;
+
+    private String deTipoPrestador;
+
+    private String deTipoContrato;
+
+    private String deDisponibilidade;
+
+    private String cdMunicipio;
+
+    @Column(name = "nm_municipio_x")
+    private String nmMunicipiox;
+
+    private String sgUf;
+
+    private String dtVinculoInicio;
+
+    private String dtVinculoFim;
+
+    private String nmRegiao;
 
     public String getIdRede() {
         return idRede;
@@ -151,12 +181,12 @@ public class Estabelecimento {
         this.deSituacaoPrincipal = deSituacaoPrincipal;
     }
 
-    public String getIdEstabelecimentosaude() {
-        return idEstabelecimentosaude;
+    public String getIdEstabelecimentoSaude() {
+        return idEstabelecimentoSaude;
     }
 
-    public void setIdEstabelecimentosaude(String idEstabelecimentosaude) {
-        this.idEstabelecimentosaude = idEstabelecimentosaude;
+    public void setIdEstabelecimentoSaude(String idEstabelecimentoSaude) {
+        this.idEstabelecimentoSaude = idEstabelecimentoSaude;
     }
 
     public String getCdCnpjEstbSaude() {
@@ -231,20 +261,20 @@ public class Estabelecimento {
         this.cdMunicipio = cdMunicipio;
     }
 
-    public String getNmMunicipioX() {
-        return nmMunicipioX;
+    public String getNmMunicipiox() {
+        return nmMunicipiox;
     }
 
-    public void setNmMunicipioX(String nmMunicipioX) {
-        this.nmMunicipioX = nmMunicipioX;
+    public void setNmMunicipiox(String nmMunicipiox) {
+        this.nmMunicipiox = nmMunicipiox;
     }
 
-    public String getSgUF() {
-        return sgUF;
+    public String getSgUf() {
+        return sgUf;
     }
 
-    public void setSgUF(String sgUF) {
-        this.sgUF = sgUF;
+    public void setSgUf(String sgUf) {
+        this.sgUf = sgUf;
     }
 
     public String getDtVinculoInicio() {
