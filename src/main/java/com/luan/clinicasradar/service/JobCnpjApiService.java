@@ -12,11 +12,15 @@ public class JobCnpjApiService {
 
     @Scheduled(cron="0 0/1 * 1/1 * ?")
     public void buscarInformacoesNaApi(){
-        RestTemplate restTemplate = new RestTemplate();
+         //RestTemplate restTemplate = new RestTemplate();
 
-        String url = "https://www.receitaws.com.br/v1/cnpj/45615309000124";
+        //String url = "https://www.receitaws.com.br/v1/cnpj/45615309000124";
         //String url = "https://www.receitaws.com.br/v1/cnpj/{cnpjClinica}";
-        EstabelecimentoApi estabelecimentoApi = restTemplate.getForObject(url, EstabelecimentoApi.class);
+        //EstabelecimentoApi estabelecimentoApi = restTemplate.getForObject(url, EstabelecimentoApi.class);
+
+        // TODO - Colocar para buscar todas os estabelecimentos que não possuem o campo logradouro
+        // TODO - Criar job para converter cep em latitude e longitude
+
 
     }
 }
