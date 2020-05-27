@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=prod -jar target/app-0.0.1-SNAPSHOT.jar
+web: java -Dspring.profiles.active=prod -jar target/clinicasradar-0.0.1-SNAPSHOT.jar
