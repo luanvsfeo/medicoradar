@@ -6,6 +6,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Date;
+
 
 @Component
 public class JobCnpjApiService {
@@ -27,7 +29,7 @@ public class JobCnpjApiService {
         EstabelecimentoApi estabelecimentoApi = restTemplate.getForObject(url, EstabelecimentoApi.class,estabelecimento.getCnpj());
         estabelecimento.atualizar(estabelecimentoApi);
         estabelecimentoInfoService.atualizarAposJob(estabelecimento);
-        System.out.println("Estabelecimento atualizado - CNPJ:" + estabelecimento.getCnpj());
+        System.out.println( new Date() + " - Estabelecimento atualizado - CNPJ:" + estabelecimento.getCnpj());
 
         // TODO - Criar job para converter cep em latitude e longitude
 
