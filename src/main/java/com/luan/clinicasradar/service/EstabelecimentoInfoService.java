@@ -26,4 +26,8 @@ public class EstabelecimentoInfoService {
     public void atualizarAposJob(EstabelecimentoInfo estabelecimentoInfo){
         estabelecimentoInfoRepository.save(estabelecimentoInfo);
     }
+
+    public Collection<EstabelecimentoInfo> buscarTodosPorPlanoEConvenio(String cdOperadora, String cdPlano){
+        return estabelecimentoInfoRepository.findAllAfterJobByCdOperadoraAndCdPlano(cdOperadora,cdPlano);
+    }
 }
