@@ -204,3 +204,27 @@ create table estabelecimento(
 	NM_REGIAO varchar(255) null,
 	constraint pk_estabelecimento primary key (ID_REDE)
 );
+
+
+create table estabelecimento_info(
+	cnpj		varchar(14)     not null,
+	nome 		varchar(255)    null,
+	fantasia	varchar(255)    null,
+	uf 			varchar(2)      null,
+	municipio 	varchar(50)     null,
+	bairro 		varchar(50)     null,
+	logradouro 	varchar(255)    null,
+	numero 		varchar(10)	    null,
+	complemento varchar(255)    null,
+	cep 		varchar(10)     null,
+	latitude 	varchar(10)     null,
+	longitude 	varchar(10)     null,
+	telefone	varchar(60)     null,
+	situacao	varchar(20)     null,
+	constraint pk_cnpj primary key(cnpj)
+);
+
+
+----------------- script para popular a tabela de info com cnpj ---------------------
+insert into estabelecimento_info(cnpj)
+select distinct cd_cnpj_estb_saude from estabelecimento
