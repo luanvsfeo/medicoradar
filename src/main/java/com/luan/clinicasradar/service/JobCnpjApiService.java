@@ -4,6 +4,7 @@ import com.luan.clinicasradar.domain.EstabelecimentoApi;
 import com.luan.clinicasradar.domain.EstabelecimentoInfo;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
@@ -23,16 +24,17 @@ public class JobCnpjApiService {
 
         EstabelecimentoInfo estabelecimento = estabelecimentoInfoService.buscarEstabelecimentoAntesDoJob();
 
-         RestTemplate restTemplate = new RestTemplate();
+        if(!ObjectUtils.isEmpty(estabelecimento.getCnpj())){
+            RestTemplate restTemplate = new RestTemplate();
 
-         String url = "https://www.receitaws.com.br/v1/cnpj/{cnpjClinica}";
-        EstabelecimentoApi estabelecimentoApi = restTemplate.getForObject(url, EstabelecimentoApi.class,estabelecimento.getCnpj());
-        estabelecimento.atualizar(estabelecimentoApi);
-        estabelecimentoInfoService.atualizarAposJob(estabelecimento);
-        System.out.println( new Date() + " - Estabelecimento atualizado - CNPJ:" + estabelecimento.getCnpj());
-
+            String url = "https://www.receitaws.com.br/v1/cnpj/{cnpjClinica}";
+            EstabelecimentoApi estabelecimentoApi = restTemplate.getForObject(url, EstabelecimentoApi.class,estabelecimento.getCnpj());
+            estabelecimento.atualizar(estabelecimentoApi);
+            estabelecimentoInfoService.atualizarAposJob(estabelecimento);
+            System.out.println( new Date() + " - Estabelecimento atualizado - CNPJ:" + estabelecimento.getCnpj());
+        }else{
+            System.out.println( "Desativar o Job - Estabelecimentos atualizados");
+        }
         // TODO - Criar job para converter cep em latitude e longitude
-
-
     }
 }
