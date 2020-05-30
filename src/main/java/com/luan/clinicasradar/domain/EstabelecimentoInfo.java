@@ -40,6 +40,9 @@ public class EstabelecimentoInfo {
     @Nullable
     private String telefone;
 
+    @Nullable
+    private String situacao;
+
 
     public EstabelecimentoInfo() {
     }
@@ -124,6 +127,14 @@ public class EstabelecimentoInfo {
         this.telefone = telefone;
     }
 
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+
     public void atualizar(EstabelecimentoApi estabelecimentoApi){
         this.nome = estabelecimentoApi.getNome();
         this.bairro = estabelecimentoApi.getBairro();
@@ -134,5 +145,6 @@ public class EstabelecimentoInfo {
         this.municipio = estabelecimentoApi.getMunicipio();
         this.telefone = estabelecimentoApi.getTelefone();
         this.uf = estabelecimentoApi.getUf();
+        this.situacao = estabelecimentoApi.getSituacao();
     }
 }
