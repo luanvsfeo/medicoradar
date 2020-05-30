@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EstabelecimentoInfoRepository extends JpaRepository<EstabelecimentoInfo, String> {
 
-    @Query(value = "select * from estabelecimento_info where logradouro is null limit 1",nativeQuery = true)
+    @Query(value = "select * from estabelecimento_info where situacao is null limit 1",nativeQuery = true)
     EstabelecimentoInfo findOneBeforeJob();
 
 }
