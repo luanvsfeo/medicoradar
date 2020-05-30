@@ -12,13 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-public class EstabelecimentoController {
+public class EstabelecimentoInfoController {
 
-    private final EstabelecimentoService estabelecimentoService;
     private final EstabelecimentoInfoService estabelecimentoInfoService;
 
-    public EstabelecimentoController(EstabelecimentoService estabelecimentoService, EstabelecimentoInfoService estabelecimentoInfoService) {
-        this.estabelecimentoService = estabelecimentoService;
+    public EstabelecimentoInfoController(EstabelecimentoInfoService estabelecimentoInfoService) {
         this.estabelecimentoInfoService = estabelecimentoInfoService;
     }
 
