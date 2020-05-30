@@ -13,6 +13,7 @@ public class EstabelecimentoApi implements Serializable {
     private String numero;
     private String fantasia;
     private String telefone;
+    private String situacao;
 
     public EstabelecimentoApi( ) {  }
 
@@ -86,5 +87,13 @@ public class EstabelecimentoApi implements Serializable {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
 }
