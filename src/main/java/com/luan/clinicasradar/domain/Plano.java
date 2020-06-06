@@ -1,5 +1,7 @@
 package com.luan.clinicasradar.domain;
 
+import org.springframework.util.StringUtils;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -206,5 +208,15 @@ public class Plano {
 
     public void setDataRegistroPlano(String dataRegistroPlano) {
         this.dataRegistroPlano = dataRegistroPlano;
+    }
+
+    public void atualizarNome(){
+        if(!StringUtils.isEmpty(this.nomePlano)){
+            if(this.nomePlano.contains("Sa�de")){
+                this.nomePlano = this.nomePlano.replace("Sa�de", "Saúde");
+            }else if(this.nomePlano.contains("SA�DE")){
+                this.nomePlano = this.nomePlano.replace("SA�DE", "SAÚDE");
+            }
+        }
     }
 }
