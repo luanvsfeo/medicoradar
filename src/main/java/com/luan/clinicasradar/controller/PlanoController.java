@@ -28,17 +28,5 @@ public class PlanoController {
     }
 
 
-    @GetMapping("planos/atualizar")
-    public ResponseEntity atualizarInformacaoQuebrada(){
-
-        Collection<Plano> planos = planoService.buscarPlanos();
-
-        for ( Plano plano : planos){
-            plano.atualizarNome();
-        }
-        planoService.salvarTodas(planos);
-
-        return ResponseEntity.ok().build();
-    }
 
 }
