@@ -8,7 +8,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -48,10 +48,18 @@ public class JobService {
     }*/
 
 
-    /*@Scheduled(cron="0/15 0/1 * 1/1 * ?")
+    @Scheduled(cron="0/10 0/1 * 1/1 * ?")
     public void buscarCoordenadasNaApi(){
 
         EstabelecimentoInfo estabelecimento = estabelecimentoInfoService.buscarEstabelecimentoAntesDoCoordsJob();
+
+        if(!StringUtils.isEmpty(estabelecimento.getLatitude())){
+            estabelecimento.atualizaPossuiCoord();
+            estabelecimentoInfoService.atualizarAposJob(estabelecimento);
+            System.out.println("Atualizada a flag - Cnpj:" + estabelecimento.getCnpj() + " - CEP :" + estabelecimento.getCep());
+            return;
+        }
+
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders httpHeaders  = new HttpHeaders();
         httpHeaders.set("Authorization","Token token=31cc4d1144035503139de8033fc067f9");
@@ -72,6 +80,6 @@ public class JobService {
         estabelecimento.atualizarCoords(estabelecimentoApi.getBody());
         estabelecimentoInfoService.atualizarAposJob(estabelecimento);
 
-        System.out.println("Coords : Estabelecimento atualizado - " + estabelecimento.getCnpj());
-    }*/
+        System.out.println("Coords : Estabelecimento atualizado - Cnpj:" + estabelecimento.getCnpj() + " - CEP :" + estabelecimento.getCep());
+    }
 }
