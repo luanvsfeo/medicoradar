@@ -1,7 +1,9 @@
 package com.luan.clinicasradar.domain;
 
 import com.sun.istack.Nullable;
+import org.springframework.util.StringUtils;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -48,6 +50,10 @@ public class EstabelecimentoInfo {
 
     @Nullable
     private String longitude;
+
+    @Nullable
+    @Column(name = "possui_coords")
+    private String possuiCoords;
 
 
     public EstabelecimentoInfo() {
@@ -149,6 +155,14 @@ public class EstabelecimentoInfo {
 
     public void setLongitude(String longitude) {  this.longitude = longitude;  }
 
+    public String getPossuiCoords() {
+        return possuiCoords;
+    }
+
+    public void setPossuiCoords(String possuiCoords) {
+        this.possuiCoords = possuiCoords;
+    }
+
     public void atualizarApiCnpj(EstabelecimentoApi estabelecimentoApi){
         this.nome = estabelecimentoApi.getNome();
         this.bairro = estabelecimentoApi.getBairro();
@@ -163,7 +177,16 @@ public class EstabelecimentoInfo {
     }
 
     public void atualizarCoords(EstabelecimentoApi estabelecimentoApi){
-        this.latitude = estabelecimentoApi.getLatitude();
-        this.longitude = estabelecimentoApi.getLongitude();
+        if(StringUtils.isEmpty(estabelecimentoApi.getLatitude())){
+            this.possuiCoords = "NAO";
+        }else{
+            this.latitude = estabelecimentoApi.getLatitude();
+            this.longitude = estabelecimentoApi.getLongitude();
+            this.possuiCoords= "SIM";
+        }
+    }
+
+    public void atualizaPossuiCoord(){
+        this.possuiCoords = "SIM";
     }
 }
