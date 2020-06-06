@@ -14,7 +14,7 @@ public interface EstabelecimentoInfoRepository extends JpaRepository<Estabelecim
     @Query(value = "select * from clinicasradar.estabelecimento_info where situacao is null limit 1",nativeQuery = true)
     EstabelecimentoInfo findOneBeforeCnpjJob();
 
-    @Query(value = "select * from clinicasradar.estabelecimento_info where latitude is null and situacao like 'ATIVA' and cnpj not in ('53894218000101','51102697000142','53638649000107','72909179000105') limit 1",nativeQuery = true)
+    @Query(value = "select * from clinicasradar.estabelecimento_info where situacao like 'ATIVA' and possui_coords is null limit 1",nativeQuery = true)
     EstabelecimentoInfo findOneBeforeCoordsJob();
 
     @Query(value = "select * from clinicasradar.estabelecimento_info where cnpj in (SELECT cd_cnpj_estb_saude FROM clinicasradar.estabelecimento where cd_plano = :cd_plano and cd_operadora = :cd_operadora)",nativeQuery = true)
