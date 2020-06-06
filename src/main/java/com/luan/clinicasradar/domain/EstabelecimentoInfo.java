@@ -43,6 +43,12 @@ public class EstabelecimentoInfo {
     @Nullable
     private String situacao;
 
+    @Nullable
+    private String latitude;
+
+    @Nullable
+    private String longitude;
+
 
     public EstabelecimentoInfo() {
     }
@@ -135,7 +141,15 @@ public class EstabelecimentoInfo {
         this.situacao = situacao;
     }
 
-    public void atualizar(EstabelecimentoApi estabelecimentoApi){
+    public String getLatitude() { return latitude;  }
+
+    public void setLatitude(String latitude) {  this.latitude = latitude;  }
+
+    public String getLongitude() {  return longitude;  }
+
+    public void setLongitude(String longitude) {  this.longitude = longitude;  }
+
+    public void atualizarApiCnpj(EstabelecimentoApi estabelecimentoApi){
         this.nome = estabelecimentoApi.getNome();
         this.bairro = estabelecimentoApi.getBairro();
         this.cep = estabelecimentoApi.getCep();
@@ -146,5 +160,10 @@ public class EstabelecimentoInfo {
         this.telefone = estabelecimentoApi.getTelefone();
         this.uf = estabelecimentoApi.getUf();
         this.situacao = estabelecimentoApi.getSituacao();
+    }
+
+    public void atualizarCoords(EstabelecimentoApi estabelecimentoApi){
+        this.latitude = estabelecimentoApi.getLatitude();
+        this.longitude = estabelecimentoApi.getLongitude();
     }
 }

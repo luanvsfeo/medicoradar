@@ -228,3 +228,7 @@ create table estabelecimento_info(
 ----------------- script para popular a tabela de info com cnpj ---------------------
 insert into estabelecimento_info(cnpj)
 select distinct cd_cnpj_estb_saude from estabelecimento
+
+------------
+ALTER TABLE clinicasradar.estabelecimento_info ALTER COLUMN latitude TYPE varchar(20) USING latitude::varchar;
+ALTER TABLE clinicasradar.estabelecimento_info ALTER COLUMN longitude TYPE varchar(20) USING longitude::varchar;

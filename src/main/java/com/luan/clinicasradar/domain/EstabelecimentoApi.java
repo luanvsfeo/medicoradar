@@ -14,6 +14,8 @@ public class EstabelecimentoApi implements Serializable {
     private String fantasia;
     private String telefone;
     private String situacao;
+    private String latitude;
+    private String longitude;
 
     public EstabelecimentoApi( ) {  }
 
@@ -95,5 +97,21 @@ public class EstabelecimentoApi implements Serializable {
 
     public void setSituacao(String situacao) {
         this.situacao = situacao;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
