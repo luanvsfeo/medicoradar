@@ -25,7 +25,11 @@ public class JobService {
     }
 
 
-    @Scheduled(cron="0 0/1 * 1/1 * ?")
+    /**
+    * Retirada do Job de atualização dos cnpjs
+    * */
+
+   /* @Scheduled(cron="0 0/1 * 1/1 * ?")
     public void buscarInformacoesNaApi(){
 
         EstabelecimentoInfo estabelecimento = estabelecimentoInfoService.buscarEstabelecimentoAntesDoCnpjJob();
@@ -41,7 +45,7 @@ public class JobService {
         }else{
             System.out.println( "Desativar o Job - Estabelecimentos atualizados");
         }
-    }
+    }*/
 
 
     @Scheduled(cron="0/15 0/1 * 1/1 * ?")
