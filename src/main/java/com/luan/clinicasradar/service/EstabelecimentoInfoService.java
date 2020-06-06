@@ -19,8 +19,12 @@ public class EstabelecimentoInfoService {
         return estabelecimentoInfoRepository.findAll();
     }
 
-    public EstabelecimentoInfo buscarEstabelecimentoAntesDoJob(){
-        return estabelecimentoInfoRepository.findOneBeforeJob();
+    public EstabelecimentoInfo buscarEstabelecimentoAntesDoCnpjJob(){
+        return estabelecimentoInfoRepository.findOneBeforeCnpjJob();
+    }
+
+    public EstabelecimentoInfo buscarEstabelecimentoAntesDoCoordsJob(){
+        return estabelecimentoInfoRepository.findOneBeforeCoordsJob();
     }
 
     public void atualizarAposJob(EstabelecimentoInfo estabelecimentoInfo){
