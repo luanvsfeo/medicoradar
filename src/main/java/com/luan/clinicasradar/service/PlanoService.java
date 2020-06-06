@@ -23,4 +23,9 @@ public class PlanoService {
     public Collection<Plano> buscarPlanosPorId(String convenioId){
         return this.planoRepository.findPlanosByCdOperadora(convenioId);
     }
+
+    public void salvarTodas(Collection<Plano> planos){
+         planoRepository.saveAll(planos);
+    }
+
 }
