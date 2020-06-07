@@ -26,7 +26,7 @@ public class JobService {
 
 
     /**
-    * Retirada do Job de atualização dos cnpjs
+    * Retirada do Job de atualização dos cnpjs (ja atualizou todos os cnpj)
     * */
 
    /* @Scheduled(cron="0 0/1 * 1/1 * ?")
@@ -47,7 +47,9 @@ public class JobService {
         }
     }*/
 
-
+    /**
+     * Retirada do Job de atualização das coordenadas (ja atualizou todos os cep que existem na base com a api)
+     * */
     /*@Scheduled(cron="0/10 0/1 * 1/1 * ?")
     public void buscarCoordenadasNaApi(){
 
