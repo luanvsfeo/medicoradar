@@ -48,7 +48,7 @@ public class JobService {
     }*/
 
 
-    @Scheduled(cron="0/10 0/1 * 1/1 * ?")
+    /*@Scheduled(cron="0/10 0/1 * 1/1 * ?")
     public void buscarCoordenadasNaApi(){
 
         EstabelecimentoInfo estabelecimento = estabelecimentoInfoService.buscarEstabelecimentoAntesDoCoordsJob();
@@ -81,5 +81,5 @@ public class JobService {
         estabelecimentoInfoService.atualizarAposJob(estabelecimento);
 
         System.out.println("Coords : Estabelecimento atualizado - Cnpj:" + estabelecimento.getCnpj() + " - CEP :" + estabelecimento.getCep());
-    }
+    }*/
 }
